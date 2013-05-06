@@ -62,4 +62,6 @@
         <source-file src="PushPlugin.h" />
         <source-file src="PushPlugin.m" />
     </platform>
+    
+    <gap:plugin name="PushPlugin"/>
 </plugin>
