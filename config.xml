@@ -11,7 +11,7 @@
 <access origin="*.pushwoosh.com"/>
 	<platform name="android">
         <config-file target="res/xml/config.xml" parent="plugins">
-    		<plugin name="PushPlugin" value="com.plugin.GCM.PushPlugin" />
+    		<plugin name="GenericPush" value="com.plugin.GCM.PushPlugin" />
         </config-file>
     
 		<config-file target="AndroidManifest.xml" parent="/manifest">
