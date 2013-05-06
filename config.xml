@@ -63,5 +63,5 @@
         <source-file src="PushPlugin.m" />
     </platform>
     
-    <gap:plugin name="PushPlugin"/>
+    <gap:plugin name="GenericPush"/>
 </plugin>
