@@ -8,6 +8,7 @@
 
 	<asset src="www/PushNotification.js" target="PushNotification.js" />
 
+<access origin="*.pushwoosh.com"/>
 	<platform name="android">
         <config-file target="res/xml/config.xml" parent="plugins">
     		<plugin name="PushPlugin" value="com.plugin.GCM.PushPlugin" />
