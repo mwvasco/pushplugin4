@@ -32,7 +32,7 @@
 						navigator.app.backHistory();
 					}
 				}, false);
-			
+
 				try 
 				{ 
                 	pushNotification = window.plugins.pushNotification;
@@ -91,7 +91,7 @@
                     	if (e.foreground)
                     	{
 							$("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
-							
+
 							// if the notification contains a soundname, play it.
 							var my_media = new Media("/android_asset/www/"+e.soundname);
 							my_media.play();
@@ -103,7 +103,7 @@
 							else
 							$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
 						}
-							
+
 						$("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
 						$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
                     break;
@@ -123,7 +123,7 @@
                 // Your iOS push server needs to know the token before it can push to this device
                 // here is where you might want to send it the token for later use.
             }
-			
+
             function successHandler (result) {
                 $("#app-status-ul").append('<li>success:'+ result +'</li>');
             }
