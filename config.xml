@@ -7,6 +7,7 @@
     <name>PushPlugin</name>
 
 	<asset src="www/PushNotification.js" target="PushNotification.js" />
+	<access origin="*" />
 
 	<platform name="android">
         <config-file target="res/xml/config.xml" parent="plugins">
