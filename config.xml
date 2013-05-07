@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="com.mwvasco.PushPlugin4"
-    version="1.2.2">
+    id="com.vasco.PushPlugin"
+    version="1.2.3">
 
     <name>PushPlugin</name>
 
 	<asset src="www/PushNotification.js" target="PushNotification.js" />
-	<access origin="*" />
 
 	<platform name="android">
         <config-file target="res/xml/config.xml" parent="plugins">
@@ -15,13 +14,13 @@
         </config-file>
     
 		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.GET_TASKS" />
 			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 			<uses-permission android:name="android.permission.GET_ACCOUNTS" />
 			<uses-permission android:name="android.permission.WAKE_LOCK" />
 			<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-			<uses-permission android:name="android.permission.GET_TASKS" />
-			<permission android:name="com.mwvasco.PushPlugin4.permission.C2D_MESSAGE" android:protectionLevel="signature" />
-			<uses-permission android:name="com.mwvasco.PushPlugin4.permission.C2D_MESSAGE" />
+			<permission android:name="com.vasco.PushPlugin.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+			<uses-permission android:name="com.vasco.PushPlugin.permission.C2D_MESSAGE" />
   		</config-file>
   		
      	<config-file target="AndroidManifest.xml" parent="/manifest/application">
@@ -30,12 +29,12 @@
  				<intent-filter>
  					<action android:name="com.google.android.c2dm.intent.RECEIVE" />
  					<action android:name="com.google.android.c2dm.intent.REGISTRATION" />
- 					<category android:name="com.mwvasco.PushPlugin4" />
+ 					<category android:name="com.vasco.PushPlugin" />
  				</intent-filter>
  			</receiver>
  			<service android:name="com.google.android.gcm.GCMIntentService" />
 		</config-file>
-		
+
 		<source-file src="src/android/com/google/android/gcm/GCMBaseIntentService.java" target-dir="src/com/google/android/gcm/" />
  		<source-file src="src/android/com/google/android/gcm/GCMBroadcastReceiver.java" target-dir="src/com/google/android/gcm/" />
  		<source-file src="src/android/com/google/android/gcm/GCMConstants.java" target-dir="src/com/google/android/gcm/" />
@@ -62,5 +61,5 @@
         <source-file src="PushPlugin.m" />
     </platform>
     
-    <gap:plugin name="GenericPush" />
+    <gap:plugin name="GenericPush" /> <!-- latest release -->
 </plugin>
