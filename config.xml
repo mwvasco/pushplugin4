@@ -61,5 +61,5 @@
         <source-file src="PushPlugin.m" />
     </platform>
     
-    <gap:plugin name="GenericPush" /> <!-- latest release -->
+    <gap:plugin name="PushPlugin" /> <!-- latest release -->
 </plugin>
