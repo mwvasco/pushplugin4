@@ -8,14 +8,12 @@
 
 	<asset src="www/PushNotification.js" target="PushNotification.js" />
 
-<access origin="*.pushwoosh.com"/>
 	<platform name="android">
         <config-file target="res/xml/config.xml" parent="plugins">
     		<plugin name="GenericPush" value="com.plugin.GCM.GenericPush" />
         </config-file>
     
 		<config-file target="AndroidManifest.xml" parent="/manifest">
-			<uses-permission android:name="android.permission.GET_TASKS" />
 			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 			<uses-permission android:name="android.permission.GET_ACCOUNTS" />
 			<uses-permission android:name="android.permission.WAKE_LOCK" />
