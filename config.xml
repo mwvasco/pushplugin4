@@ -10,29 +10,29 @@
 
 	<platform name="android">
         <config-file target="res/xml/config.xml" parent="plugins">
-    		<plugin name="PushPlugin" value="com.plugin.GCM.PushPlugin" />
+    		<plugin name="GenericPush" value="com.plugin.GCM.PushPlugin" />
         </config-file>
     
 		<config-file target="AndroidManifest.xml" parent="/manifest">
-			<uses-permission android:name="android.permission.GET_TASKS" />
-			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-			<uses-permission android:name="android.permission.GET_ACCOUNTS" />
-			<uses-permission android:name="android.permission.WAKE_LOCK" />
-			<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-			<permission android:name="com.vasco.PushPlugin.permission.C2D_MESSAGE" android:protectionLevel="signature" />
-			<uses-permission android:name="com.vasco.PushPlugin.permission.C2D_MESSAGE" />
+		<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+<uses-permission android:name="android.permission.WAKE_LOCK" />
+<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+<uses-permission android:name="android.permission.GET_TASKS" />
+<permission android:name="com.vasco.PushPlugin.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+<uses-permission android:name="com.vasco.PushPlugin.permission.C2D_MESSAGE" />
   		</config-file>
   		
      	<config-file target="AndroidManifest.xml" parent="/manifest/application">
-			<activity android:name="com.plugin.GCM.PushHandlerActivity"/>
- 			<receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND" >
- 				<intent-filter>
- 					<action android:name="com.google.android.c2dm.intent.RECEIVE" />
- 					<action android:name="com.google.android.c2dm.intent.REGISTRATION" />
- 					<category android:name="com.vasco.PushPlugin" />
- 				</intent-filter>
- 			</receiver>
- 			<service android:name="com.google.android.gcm.GCMIntentService" />
+		<activity android:name="com.plugin.GCM.PushHandlerActivity"/>
+<receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND" >
+  <intent-filter>
+    <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+    <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+    <category android:name="com.vasco.PushPlugin" />
+  </intent-filter>
+</receiver>
+<service android:name="com.google.android.gcm.GCMIntentService" />
 		</config-file>
 
 		<source-file src="src/android/com/google/android/gcm/GCMBaseIntentService.java" target-dir="src/com/google/android/gcm/" />
@@ -61,5 +61,5 @@
         <source-file src="PushPlugin.m" />
     </platform>
     
-    <gap:plugin name="PushPlugin" /> <!-- latest release -->
+   <gap:plugin name="GenericPush" /> <!-- latest release -->
 </plugin>
